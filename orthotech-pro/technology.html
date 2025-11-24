@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | OrthoTech Pro</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="security-bar" class="security-bar">
+        <span class="security-icon">🔒</span>
+        <span>Connection Secured | TLS 1.3</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🦷</span>
+                <span class="logo-text">OrthoTech<span class="accent">Pro</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="technology.html" class="active">Technology</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="gradient-text">Our Technology Stack</h1>
+            <p>Cutting-edge tools powering modern orthodontics</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <h2>AI & Machine Learning</h2>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <h3>🤖 Treatment Prediction AI</h3>
+                            <p>Neural networks trained on 100,000+ cases predict treatment outcomes with 99.7% accuracy. Our proprietary algorithms analyze facial structure, tooth positioning, and growth patterns.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>📊 Progress Analytics</h3>
+                            <p>Real-time monitoring using computer vision to track tooth movement, automatically alerting orthodontists to any deviations from the treatment plan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h2>3D Imaging & Scanning</h2>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <h3>🔬 Intraoral Scanners</h3>
+                            <p>Sub-millimeter precision 3D scanning eliminates traditional impressions. Our iTero Element 5D scanner captures high-resolution images in minutes.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>🖥️ Digital Treatment Planning</h3>
+                            <p>Interactive 3D models allow patients to visualize their treatment journey before it begins, with precise timeline predictions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h2>IoT & Connected Devices</h2>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <h3>📡 Smart Aligners</h3>
+                            <p>Embedded sensors track wear time, pressure distribution, and compliance. Data syncs to our HIPAA-compliant cloud via Bluetooth Low Energy.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>📱 Patient Mobile App</h3>
+                            <p>iOS and Android apps with biometric authentication, appointment scheduling, progress photos, and secure messaging with orthodontists.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h2>Blockchain & Data Security</h2>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <h3>⛓️ Distributed Medical Records</h3>
+                            <p>Immutable patient history stored on Hyperledger Fabric blockchain, ensuring data integrity and patient ownership of records.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>🔐 Zero-Knowledge Proof</h3>
+                            <p>Advanced cryptographic protocols allow verification without exposing sensitive data, maintaining privacy during insurance claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-showcase">
+                <h2>API Integration Example</h2>
+                <div class="code-block-large">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">patient-api.js</span>
+                    </div>
+                    <pre class="code-content">
+<span class="code-comment">// OrthoTech Pro Patient API v2.0</span>
+<span class="code-keyword">import</span> { SecureAuth, EncryptionService } <span class="code-keyword">from</span> <span class="code-string">'@orthotech/security'</span>;
+
+<span class="code-keyword">class</span> <span class="code-class">PatientPortal</span> {
+  <span class="code-keyword">constructor</span>() {
+    <span class="code-keyword">this</span>.auth = <span class="code-keyword">new</span> <span class="code-class">SecureAuth</span>({
+      encryption: <span class="code-string">'AES-256-GCM'</span>,
+      tokenExpiry: <span class="code-number">3600</span>,
+      mfa: <span class="code-keyword">true</span>
+    });
+  }
+
+  <span class="code-keyword">async</span> <span class="code-function">authenticate</span>(credentials) {
+    <span class="code-keyword">const</span> token = <span class="code-keyword">await</span> <span class="code-keyword">this</span>.auth.<span class="code-function">verifyBiometric</span>(credentials);
+    
+    <span class="code-keyword">if</span> (token.verified) {
+      <span class="code-keyword">return</span> <span class="code-keyword">await</span> <span class="code-keyword">this</span>.<span class="code-function">loadPatientData</span>(token.userId);
+    }
+    
+    <span class="code-keyword">throw</span> <span class="code-keyword">new</span> <span class="code-class">AuthError</span>(<span class="code-string">'Authentication failed'</span>);
+  }
+
+  <span class="code-keyword">async</span> <span class="code-function">getTreatmentProgress</span>(patientId) {
+    <span class="code-keyword">const</span> encrypted = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">`/api/progress/${patientId}`</span>);
+    <span class="code-keyword">return</span> EncryptionService.<span class="code-function">decrypt</span>(encrypted);
+  }
+}
+
+<span class="code-keyword">export</span> <span class="code-keyword">default</span> PatientPortal;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>OrthoTech Pro</h4>
+                    <p>Advanced orthodontic solutions with enterprise-grade security</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="security.html">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p>Email: info@orthotechpro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 OrthoTech Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
